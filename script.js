@@ -88,20 +88,7 @@ headers:{
 "Content-Type":"application/json",
 },
 body:JSON.stringify({
-model:CONFIG.MODEL,
-messages:[
-{
-role:"system",
-content:"You are an Emergency Triage Medical AI. Always respond ONLY in valid JSON."
-},
-{
-role:"user",
-content:prompt
-}],
-temperature:0.2,
-response_format:{
-type:"json_object"
-}
+patient: patient
 })
 });
 
