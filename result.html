@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Emergency Triage AI Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+<div class="logo">
+<div class="logo-icon">🏥</div>
+<div>
+<h2>Emergency Triage AI</h2>
+<p>Emergency Assessment Report</p>
+</div>
+</div>
+</header>
+
+<div class="action-bar">
+<button class="action-btn" onclick="window.print()">🖨 Print Report</button>
+<button class="action-btn" id="downloadPdfBtn">📄 Download PDF</button>
+<button class="action-btn" onclick="window.location.href='index.html'">➕ New Assessment</button>
+</div>
+
+<div class="dashboard">
+
+<div class="dashboard-grid">
+
+<div class="info-card">
+<h3>👤 Patient Details</h3>
+<table class="table">
+<tr><td>Name</td><td id="name"></td></tr>
+<tr><td>Age</td><td id="age"></td></tr>
+<tr><td>Gender</td><td id="gender"></td></tr>
+<tr><td>Weight</td><td id="weight"></td></tr>
+<tr><td>Height</td><td id="height"></td></tr>
+<tr><td>Temperature</td><td id="temperature"></td></tr>
+<tr><td>Pulse</td><td id="pulse"></td></tr>
+<tr><td>Blood Pressure</td><td id="bp"></td></tr>
+<tr><td>SpO₂</td><td id="spo2"></td></tr>
+<tr><td>Medical History</td><td id="history"></td></tr>
+<tr><td>Symptoms</td><td id="symptoms"></td></tr>
+<tr><td>Generated</td><td id="generated"></td></tr>
+</table>
+</div>
+
+<div class="info-card">
+<h3>🚨 Risk Assessment</h3>
+<div class="risk-container">
+
+<h2 id="riskText"></h2>
+
+<div id="riskBadge" class="badge">
+Loading...
+</div>
+
+</div>
+
+<div class="risk-note">
+
+AI evaluates the patient's symptoms and vitals to estimate emergency severity.
+
+</div>
+<h3 style="margin-top:25px;">AI Confidence</h3>
+<div class="meter">
+<div
+class="fill"
+id="confidenceFill">
+</div>
+</div>
+<h2
+id="confidenceText"
+class="confidence-text">
+0%
+</h2>
+<p class="confidence-info">
+Higher confidence indicates more consistent symptom analysis.
+</p>
+
+<div class="info-card">
+<h3>🩺 Possible Condition</h3>
+<h4 id="conditionTitle"></h4>
+<p id="conditionExplanation"></p>
+</div>
+
+<div class="info-card">
+
+<h3>🩹 First Aid</h3>
+
+<ul id="firstAid" class="list-card">
+
+</ul>
+
+</div>
+
+<div class="info-card">
+
+<h3>❤️ General Health Guidance</h3>
+
+<ul id="guidance" class="list-card">
+
+</ul>
+
+</div>
+
+<div class="info-card">
+<h3>🏥 Hospital Recommendation</h3>
+<p id="hospital"></p>
+</div>
+
+<div class="info-card">
+<h3>⚠ Emergency Alert</h3>
+<div id="alertBox" class="alert-box">
+Waiting for AI assessment...
+</div>
+</div>
+<div class="info-card">
+
+<h3>
+📋 AI Summary
+</h3>
+
+<p id="summary">
+
+AI summary will appear here.
+
+</p>
+
+</div>
+<div class="info-card">
+
+<h3>
+
+⚠ Medical Disclaimer
+
+</h3>
+
+<p>
+
+This AI assessment is intended for educational purposes only.
+
+Always consult a qualified healthcare professional for diagnosis and treatment.
+
+</p>
+
+</div>
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="result.js"></script>
+
+</body>
+</html>
