@@ -86,7 +86,6 @@ const response=await fetch("/api/analyze",{
 method:"POST",
 headers:{
 "Content-Type":"application/json",
-"Authorization":"Bearer "+CONFIG.GROQ_API_KEY
 },
 body:JSON.stringify({
 model:CONFIG.MODEL,
