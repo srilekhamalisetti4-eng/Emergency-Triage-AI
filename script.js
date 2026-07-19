@@ -82,7 +82,7 @@ Return ONLY valid JSON.
 `;
 try{
 console.log("API CALL STARTED");
-const response=await fetch(CONFIG.GROQ_API_URL,{
+const response=await fetch("/api/analyze",{
 method:"POST",
 headers:{
 "Content-Type":"application/json",
