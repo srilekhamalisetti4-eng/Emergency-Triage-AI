@@ -101,7 +101,14 @@ const data=await response.json();
 let result=data.choices[0].message.content;
 
 if(typeof result==="string"){
+
+result=result
+.replace(/```json/g,"")
+.replace(/```/g,"")
+.trim();
+
 result=JSON.parse(result);
+
 }
 console.log("AI RESULT:", result);
 const finalData={
